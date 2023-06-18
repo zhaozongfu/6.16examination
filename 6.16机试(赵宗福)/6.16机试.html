@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//unpkg.com/layui@2.8.7/dist/css/layui.css" rel="stylesheet">
+
+</head>
+<style>
+    #kbn {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 150px;
+        height: 200px;
+        background-image: url('https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/assets/waifu-tips.json');
+        background-size: cover;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    .box {
+        margin: auto;
+        position: fixed;
+        top: 0px;
+        width: 1225px;
+        z-index: 1;
+        height: 80px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .box:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .h1 {
+        width: 140px;
+        height: 80px;
+        position: relative;
+        left: 100px;
+        top: -40px;
+        line-height: 80px;
+    }
+
+    .ul {
+        text-align: center;
+        width: 355px;
+        height: 40px;
+        line-height: 40px;
+        position: relative;
+        top: 20px;
+        left: 780px;
+    }
+
+    .ul li {
+        text-align: center;
+        font-size: 18px;
+        height: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+
+    .ul li:hover {
+        border-bottom: 3px #4271ae solid;
+    }
+
+    .icon {
+        position: relative;
+        top: 10px;
+    }
+
+    .textLL {
+
+        margin: auto;
+
+    }
+
+    .textLL div {
+        margin: auto;
+        margin-top: 30px;
+        position: relative;
+        top: 100px;
+        border-radius: 6px;
+        width: 928px;
+        height: 180.33px;
+        transition: transform 0.4s ease;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .textLL div:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .textLL .icon {
+        position: relative;
+        top: 7px;
+    }
+
+    .textLL h2 {
+        position: relative;
+        top: 30px;
+        left: 60px;
+    }
+
+    .textLL .span1 {
+        position: relative;
+        top: 50px;
+        left: 60px;
+        font-size: 15px;
+    }
+
+    .textLL .span2 {
+        position: relative;
+        top: 70px;
+        left: 65px;
+        font-size: 12px;
+        color: gray;
+    }
+
+    .textLL .span3 {
+        position: relative;
+        top: 70px;
+        left: 75px;
+        font-size: 12px;
+        color: gray;
+    }
+
+    .textLL .span4 {
+        position: relative;
+        top: 70px;
+        left: 85px;
+        font-size: 12px;
+        color: gray;
+    }
+
+    .textLL .span2 .icon {
+        position: relative;
+        top: 4px;
+    }
+
+    .textLL .span3 .icon {
+        position: relative;
+        top: 4px;
+    }
+
+    .textLL .span4 .icon {
+        position: relative;
+        top: 4px;
+    }
+
+    .textLL a:hover {
+        color: aqua;
+    }
+
+    .tianstyle {
+        text-align: center;
+        margin: auto;
+        width: 400px;
+        background-color: azure;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        top: 150px;
+        display: none;
+        line-height: 45px;
+    }
+
+    .tianstyle input {
+        width: 200px;
+        height: 30px;
+    }
+
+    .tianstyle button {
+        width: 80px;
+        height: 30px;
+        background-color: aliceblue;
+        color: #4271ae;
+        border: none;
+
+    }
+
+    #CKcss {
+        margin-top: 75px;
+        float: right;
+    }
+
+    #CKcss .icon {
+        position: relative;
+        top: 10px;
+    }
+
+    #CKcss:hover {
+        color: #4271ae;
+    }
+     .num{
+            margin-top: 120px;
+            color: #537690;
+            line-height: 40px;
+            text-align: center;
+        }
+</style>
+
+<body>
+    <div class="box">
+
+        <ul class="ul">
+            <li style="border-bottom: 3px #4271ae solid;" id="li"><a href="">首页</a></li>
+            <li id="li1"><a href="">添加</a></li>
+            <li><a href="">关于</a></li>
+            <li style="border: none;"><a href=""> <svg t="1686901564017" class="icon" viewBox="0 0 1024 1024"
+                        version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2372" width="32" height="32">
+                        <path
+                            d="M756.565333 697.258667c2.133333 1.493333 4.224 3.157333 6.101334 5.12l241.664 241.621333c16.256 16.256 16.512 43.52-0.128 60.16a42.453333 42.453333 0 0 1-60.202667 0.170667l-241.664-241.664a41.429333 41.429333 0 0 1-5.034667-6.101334A424.917333 424.917333 0 0 1 426.666667 853.333333C191.018667 853.333333 0 662.314667 0 426.666667S191.018667 0 426.666667 0s426.666667 191.018667 426.666666 426.666667c0 102.698667-36.266667 196.949333-96.768 270.592zM426.666667 768a341.333333 341.333333 0 1 0 0-682.666667 341.333333 341.333333 0 0 0 0 682.666667z"
+                            fill="#2c2c2c" p-id="2373"></path>
+                    </svg></a></li>
+        </ul>
+        <h1 class="h1">程序员小赵</h1>
+    </div>
+    <div class="textLL"></div>
+    <div class="tianstyle">
+        <form action="">
+            <h1>添加</h1>
+            <span>标题:</span><input type="text" id="title"><br>
+            <span>类型:</span><input type="text" id="three">
+            <span style="font-size: 18px;display:block;">内容</span><textarea name="two" id="two" cols="30" rows="10"
+                id="two"></textarea><br>
+            <button id="TJcss">提交</button>
+            <button>取消</button>
+        </form>
+    </div>
+    <div class="num">
+    <div> 2018 - 2023 小赵</div>
+    <div>访问人数 23835 总访问量 28611</div>
+    <div>由 Hexo 驱动 | 主题 Keep v3.6.1</div>
+    <div>京ICP备19029015号-1</div>
+    </div>
+    
+    <script src="./引入/jquery.js"></script>
+    <script src="./引入/layui.js"></script>
+    <script>
+        const form = document.querySelector("form")
+        let obj = [
+            {
+                title: "开发随记",
+                two: "记录每日开发过程中的一些碎片，持续更新",
+                three: "日常开发",
+                four: "dev",
+                fiex: "三个月前",
+            },
+            {
+                title: "开发随记",
+                two: "记录每日开发过程中的一些碎片，持续更新",
+                three: "日常开发",
+                four: "dev",
+                fiex: "三个月前",
+            },
+            {
+                title: "开发随记",
+                two: "记录每日开发过程中的一些碎片，持续更新",
+                three: "日常开发",
+                four: "dev",
+                fiex: "三个月前",
+            },
+            {
+                title: "开发随记",
+                two: "记录每日开发过程中的一些碎片，持续更新",
+                three: "日常开发",
+                four: "dev",
+                fiex: "三个月前",
+            },
+        ];
+        $(function () {
+            showList();
+        });
+        //添加
+        $("#li1").click(function () {
+            event.preventDefault()
+            $(".textLL").children().css("display", "none");
+            $(".tianstyle").css("display", "block");
+            $(".num").css("display", "none");
+            $("#li").css("borderBottom", "none");
+            $("#li1").css("borderBottom", "3px solid #4271ae");
+        });
+        $("#TJcss").click(function () {
+            event.preventDefault()
+            let data = {
+                title: $("#title").val(),
+                two: $("#two").val(),
+                three: $("#three").val(),
+                four: "dev",
+                fiex: getdate(),
+
+            }
+            console.log(data);
+            obj.push(data);
+
+            showList(obj);
+            form.reset();
+            $("#li").css("borderBottom", "3px solid #4271ae");
+            $("#li1").css("borderBottom", "none");
+            $(".num").css("display", "block");
+            $(".textLL").children().css("display", "block");
+            $(".tianstyle").css("display", "none");
+        })
+        function getdate() {
+            let date1 = new Date();
+            let week = date1.getDay();
+            let weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            return `${weeks[week]}`;
+        }
+        //渲染首页
+        function showList() {
+            let html = ""
+            obj.forEach((item, inex) => {
+                html += `
+                <div>
+            <h2>${item.title}</h2>
+            <span class="span1"><svg t="1686903067005" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="3576" width="25" height="25">
+                    <path
+                        d="M744.7 779.7h-399c-6.6 0-12-5.4-12-12V256.3c0-6.6 5.4-12 12-12h399c6.6 0 12 5.4 12 12v511.4c0 6.6-5.4 12-12 12z"
+                        fill="#FFFFFF" p-id="3577"></path>
+                    <path
+                        d="M744.7 791.7h-399c-13.2 0-24-10.8-24-24V256.3c0-13.2 10.8-24 24-24h399c13.2 0 24 10.8 24 24v511.4c0 13.2-10.8 24-24 24z m-399-535.4v511.4h399V256.3h-399z"
+                        fill="#474747" p-id="3578"></path>
+                    <path
+                        d="M695.4 743.2H394.8c-14 0-25.5-11.5-25.5-25.5V306.3c0-14 11.5-25.5 25.5-25.5h300.6c14 0 25.5 11.5 25.5 25.5v411.3c0 14.1-11.4 25.6-25.5 25.6z"
+                        fill="#FFDD00" p-id="3579"></path>
+                    <path d="M384.9 347m-21.8 0a21.8 21.8 0 1 0 43.6 0 21.8 21.8 0 1 0-43.6 0Z" fill="#FFFFFF"
+                        p-id="3580"></path>
+                    <path d="M384.9 431m-21.8 0a21.8 21.8 0 1 0 43.6 0 21.8 21.8 0 1 0-43.6 0Z" fill="#FFFFFF"
+                        p-id="3581"></path>
+                    <path d="M384.9 515m-21.8 0a21.8 21.8 0 1 0 43.6 0 21.8 21.8 0 1 0-43.6 0Z" fill="#FFFFFF"
+                        p-id="3582"></path>
+                    <path d="M384.9 599m-21.8 0a21.8 21.8 0 1 0 43.6 0 21.8 21.8 0 1 0-43.6 0Z" fill="#FFFFFF"
+                        p-id="3583"></path>
+                    <path d="M384.9 683m-21.8 0a21.8 21.8 0 1 0 43.6 0 21.8 21.8 0 1 0-43.6 0Z" fill="#FFFFFF"
+                        p-id="3584"></path>
+                    <path
+                        d="M381.9 361l-73.7 42.5c-5.7 3.3-13.1 1.3-16.4-4.4l-0.5-0.8c-3.3-5.7-1.3-13.1 4.4-16.4l73.7-42.5c5.7-3.3 13.1-1.3 16.4 4.4l0.5 0.8c3.3 5.7 1.3 13.1-4.4 16.4zM381.9 440.3l-73.7 42.5c-5.7 3.3-13.1 1.3-16.4-4.4l-0.5-0.8c-3.3-5.7-1.3-13.1 4.4-16.4l73.7-42.5c5.7-3.3 13.1-1.3 16.4 4.4l0.5 0.8c3.3 5.7 1.3 13.1-4.4 16.4zM381.9 522.3l-73.7 42.5c-5.7 3.3-13.1 1.3-16.4-4.4l-0.5-0.8c-3.3-5.7-1.3-13.1 4.4-16.4l73.7-42.5c5.7-3.3 13.1-1.3 16.4 4.4l0.5 0.8c3.3 5.8 1.3 13.1-4.4 16.4zM381.9 606.4l-73.7 42.5c-5.7 3.3-13.1 1.3-16.4-4.4l-0.5-0.8c-3.3-5.7-1.3-13.1 4.4-16.4l73.7-42.5c5.7-3.3 13.1-1.3 16.4 4.4l0.5 0.8c3.3 5.7 1.3 13.1-4.4 16.4zM381.9 690.4l-73.7 42.5c-5.7 3.3-13.1 1.3-16.4-4.4l-0.5-0.8c-3.3-5.7-1.3-13.1 4.4-16.4l73.7-42.5c5.7-3.3 13.1-1.3 16.4 4.4l0.5 0.8c3.3 5.7 1.3 13.1-4.4 16.4z"
+                        fill="#474747" p-id="3585"></path>
+                    <path
+                        d="M720.9 561.7v-93.5c-0.8 0-1.5-0.1-2.3-0.1H610.5c-25.7 0-46.8 21.1-46.8 46.8 0 25.7 21.1 46.8 46.8 46.8h108.1c0.8 0.1 1.6 0.1 2.3 0z"
+                        fill="#FFFFFF" p-id="3586"></path>
+                    <path d="M610.2 515m-19.6 0a19.6 19.6 0 1 0 39.2 0 19.6 19.6 0 1 0-39.2 0Z" fill="#FFDD00"
+                        p-id="3587"></path>
+                </svg>${item.two}</span><br>
+            <span class="span2"><svg t="1686903484750" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="3805" width="16" height="16">
+                    <path
+                        d="M927.1 338.9c-22.6-53.4-54.9-101.3-96.1-142.5-41.2-41.2-89.1-73.5-142.5-96.1C633.2 77 574.5 65.1 514 65.1S394.8 77 339.5 100.3c-53.4 22.6-101.3 54.9-142.5 96.1-41.2 41.2-73.5 89.1-96.1 142.5-23.4 55.3-35.2 114-35.2 174.5S77.6 632.6 101 687.9c22.6 53.4 54.9 101.3 96.1 142.5 41.2 41.2 89.1 73.5 142.5 96.1 55.3 23.4 114 35.2 174.5 35.2s119.2-11.9 174.5-35.2c53.4-22.6 101.3-54.9 142.5-96.1 41.2-41.2 73.5-89.1 96.1-142.5 23.4-55.3 35.2-114 35.2-174.5s-12-119.2-35.3-174.5zM514 881.7c-203.1 0-368.3-165.2-368.3-368.3 0-203.1 165.2-368.3 368.3-368.3s368.3 165.2 368.3 368.3c0 203.1-165.2 368.3-368.3 368.3z"
+                        p-id="3806"></path>
+                    <path
+                        d="M554 270c0-22.1-17.9-40-40-40s-40 17.9-40 40v287.2c0 1.9 0.1 3.8 0.4 5.7v0.7c0 22.1 17.9 40 40 40h287.2c22.1 0 40-17.9 40-40s-17.9-40-40-40H554V270z"
+                        p-id="3807"></path>
+                </svg>${item.fiex}</span>
+            <span class="span3"><svg t="1686904250127" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="5903" width="16" height="16">
+                    <path
+                        d="M855.04 385.024q19.456 2.048 38.912 10.24t33.792 23.04 21.504 37.376 2.048 54.272q-2.048 8.192-8.192 40.448t-14.336 74.24-18.432 86.528-19.456 76.288q-5.12 18.432-14.848 37.888t-25.088 35.328-36.864 26.112-51.2 10.24l-567.296 0q-21.504 0-44.544-9.216t-42.496-26.112-31.744-40.96-12.288-53.76l0-439.296q0-62.464 33.792-97.792t95.232-35.328l503.808 0q22.528 0 46.592 8.704t43.52 24.064 31.744 35.84 12.288 44.032l0 11.264-53.248 0q-40.96 0-95.744-0.512t-116.736-0.512-115.712-0.512-92.672-0.512l-47.104 0q-26.624 0-41.472 16.896t-23.04 44.544q-8.192 29.696-18.432 62.976t-18.432 61.952q-10.24 33.792-20.48 65.536-2.048 8.192-2.048 13.312 0 17.408 11.776 29.184t29.184 11.776q31.744 0 43.008-39.936l54.272-198.656q133.12 1.024 243.712 1.024l286.72 0z"
+                        p-id="5904" fill="#515151"></path>
+                </svg><a href="">${item.three}</a></span>
+            <span class="span4"><svg t="1686904397807" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="6984" width="16" height="16">
+                    <path
+                        d="M995.126867 592.38l-360.08 360.08a53.333333 53.333333 0 0 1-71.333334 3.68l356.22-356.22a64 64 0 0 0 0-90.506667L495.8402 85.333333h45.573333a52.986667 52.986667 0 0 1 37.713334 15.62l416 416a53.4 53.4 0 0 1 0 75.426667z m-128 0l-360.08 360.08a53.333333 53.333333 0 0 1-75.426667 0l-416-416A52.986667 52.986667 0 0 1 0.0002 498.746667V138.666667a53.393333 53.393333 0 0 1 53.333333-53.333334h360.08a52.986667 52.986667 0 0 1 37.713334 15.62l416 416a53.4 53.4 0 0 1 0 75.426667zM341.333533 341.333333a85.333333 85.333333 0 1 0-85.333333 85.333334 85.426667 85.426667 0 0 0 85.333333-85.333334z"
+                        fill="#5C5C66" p-id="6985"></path>
+                </svg><a href="">${item.four}</a></span>
+            <a id="CKcss">查看详情<svg t="1687091402877" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2673" width="32" height="32"><path d="M206.93 768.03l-0.03-0.03c-16.26-16.24-16.26-42.59-0.02-58.84l197.2-197.2L206.9 314.84c-16.25-16.25-16.25-42.6 0.01-58.84l0.02-0.02c16.25-16.23 42.57-16.22 58.8 0.02L500.5 490.77c11.71 11.71 11.72 30.71 0 42.42L265.74 768.01c-16.24 16.24-42.56 16.25-58.81 0.02z m320 0l-0.03-0.03c-16.26-16.24-16.26-42.58-0.02-58.83l197.14-197.2-197.15-197.15c-16.24-16.24-16.24-42.58 0-58.82 16.24-16.24 42.57-16.24 58.82 0L820.5 490.76c11.72 11.71 11.72 30.71 0 42.43L585.74 768.01c-16.24 16.24-42.56 16.25-58.81 0.02z" p-id="2674" fill="#8a8a8a"></path></svg></a>
+        </div>
+                `
+            })
+            $(".textLL").html(html)
+        }
+        $(function () {
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js';
+            document.getElementsByTagName('head')[0].appendChild(script);
+        });
+    </script>
+</body>
+
+</html>
